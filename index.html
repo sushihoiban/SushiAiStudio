@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sushi Hoiban</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+      /* Default Theme Variables */
+      :root {
+        --color-primary-400: #fbbf24;
+        --color-primary-500: #f59e0b;
+        --color-primary-600: #d97706;
+        
+        /* Default Dark Theme (will be overridden by JS) */
+        --color-dark-900: #0a0a0a;
+        --color-dark-800: #171717;
+        --color-dark-700: #262626;
+        
+        /* Text Colors */
+        --color-text-main: #e5e5e5;
+        --color-text-muted: #a3a3a3;
+
+        --font-sans: 'Inter', sans-serif;
+        --font-serif: 'Playfair Display', serif;
+        
+        --content-width: 80%;
+      }
+    </style>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['var(--font-sans)', 'sans-serif'],
+              serif: ['var(--font-serif)', 'serif'],
+            },
+            colors: {
+              gold: {
+                400: 'var(--color-primary-400)',
+                500: 'var(--color-primary-500)',
+                600: 'var(--color-primary-600)',
+              },
+              dark: {
+                900: 'var(--color-dark-900)', // Main Background
+                800: 'var(--color-dark-800)', // Surface / Cards
+                700: 'var(--color-dark-700)', // Borders / Secondary
+              },
+              neutral: {
+                100: 'var(--color-text-main)',
+                200: 'var(--color-text-main)', // Mapping standard text to variable
+                300: 'var(--color-text-main)',
+                400: 'var(--color-text-muted)',
+                500: 'var(--color-text-muted)',
+              }
+            },
+            width: {
+              'content': 'var(--content-width)'
+            }
+          }
+        }
+      }
+    </script>
+  <script type="importmap">
+{
+  "imports": {
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-router-dom": "https://aistudiocdn.com/react-router-dom@^7.9.6",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "@supabase/supabase-js": "https://aistudiocdn.com/@supabase/supabase-js@^2.83.0",
+    "@tanstack/react-query": "https://aistudiocdn.com/@tanstack/react-query@^5.90.10"
+  }
+}
+</script>
+</head>
+  <body class="bg-dark-900 text-neutral-200 font-sans antialiased selection:bg-gold-500 selection:text-white transition-colors duration-500">
+    <div id="root"></div>
+  </body>
+</html>
